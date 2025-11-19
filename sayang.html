@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Happy Birthday My Queen</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #ffeff7;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    .login-box, .main {
+      background: white;
+      padding: 30px;
+      border-radius: 20px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+      width: 320px;
+      text-align: center;
+      animation: fade 1s ease;
+    }
+
+    @keyframes fade {
+      from { opacity: 0; transform: scale(0.9); }
+      to { opacity: 1; transform: scale(1); }
+    }
+
+    input {
+      width: 90%;
+      padding: 10px;
+      margin: 8px 0;
+      border-radius: 10px;
+      border: 1px solid #ccc;
+    }
+
+    button {
+      padding: 10px 20px;
+      background: #ff5fa2;
+      border: none;
+      border-radius: 10px;
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background: #ff2e85;
+    }
+
+    .main { display: none; }
+
+    .emojis {
+      font-size: 40px;
+      animation: float 2s infinite alternate ease-in-out;
+    }
+
+    @keyframes float {
+      from { transform: translateY(0); }
+      to { transform: translateY(-15px); }
+    }
+
+    .gift-btn {
+      margin-top: 20px;
+      background: #7d4dff;
+    }
+
+    .gift-btn:hover {
+      background: #5b2dff;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="login-box" id="loginBox">
+    <h2>Login</h2>
+    <input type="email" id="email" placeholder="Email" />
+    <input type="password" id="password" placeholder="Password" />
+    <button onclick="login()">Enter</button>
+    <p id="error" style="color:red; font-size:14px;"></p>
+  </div>
+
+  <div class="main" id="mainPage">
+    <h1>Happy Birthday My Queen ❤️👑</h1>
+    <div class="emojis">😻💖🐱💗😺💕🐾💞</div>
+    <button class="gift-btn" onclick="revealGift()">Reveal Your Gift 🎁</button>
+  </div>
+
+  <script>
+    function login() {
+      const email = document.getElementById("email").value;
+      const password = document.getElementById("password").value;
+
+      if (email === "admin@example.com" && password === "myqueen") {
+        document.getElementById("loginBox").style.display = "none";
+        document.getElementById("mainPage").style.display = "block";
+      } else {
+        document.getElementById("error").textContent = "Wrong email or password!";
+      }
+    }
+
+    function revealGift() {
+      window.location.href = "https://forever-peach-rho.vercel.app/";
+    }
+  </script>
+
+</body>
+</html>
